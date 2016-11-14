@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Splash screen developer text color Indigo A700 -->
+    <color name="splash_screen_developer_info_textView">#304FFE</color>
+
+    <!-- Splash screen textview -->
+    <color name="splash_screen_tictactoe_textView">#F44336</color>
+
+</resources>
