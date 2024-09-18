@@ -3,16 +3,14 @@ package com.chaudhry.najeeb.tictactoe;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.chaudhry.najeeb.tictactoe.R;
 
 
 public class SplashScreenActivity extends AppCompatActivity {
-
-    // Splash screen timer
-    private static int SPLASH_TIME_OUT = 2000;  //2 seconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +43,9 @@ public class SplashScreenActivity extends AppCompatActivity {
         splashScreenDeveloperInfoTextVeiw.startAnimation(fadeIn);
         splashScreenDeveloperInfoTextVeiw.startAnimation(fadeOut);
 
+        // Splash screen timer
+        //2 seconds
+        int SPLASH_TIME_OUT = 2000;
         new Handler().postDelayed(new Runnable() {
 
             @Override

@@ -2,19 +2,21 @@ package com.chaudhry.najeeb.tictactoe;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Locale;
+import com.chaudhry.najeeb.tictactoe.R;
 
 
 public class MainActivity extends AppCompatActivity {
 
     //define instance variables for the widgets
     private com.chaudhry.najeeb.tictactoe.TicTacToeGame ticTacToeGame;
-    private Button mBoardButtons[];
+    private Button[] mBoardButtons;
     private TextView whoseTurnTextView;
     private TextView youCountTextView;
     private TextView tiesCountTextView;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //create button array
-        mBoardButtons = new Button[ticTacToeGame.getBoardSize()];
+        mBoardButtons = new Button[TicTacToeGame.getBoardSize()];
         mBoardButtons[0] = (Button) findViewById(R.id.oneButton);
         mBoardButtons[1] = (Button) findViewById(R.id.twoButton);
         mBoardButtons[2] = (Button) findViewById(R.id.threeButton);
@@ -49,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         androidCountTextView = (TextView) findViewById(R.id.androidCountTextView);
 
         //write values in widgets
-        youCountTextView.setText(Integer.toString(mHumanCounter));
-        tiesCountTextView.setText(Integer.toString(mTieCounter));
-        androidCountTextView.setText(Integer.toString(mAndroidCounter));
+        youCountTextView.setText(String.format(Locale.getDefault(), "%d", mHumanCounter));
+        tiesCountTextView.setText(String.format(Locale.getDefault(), "%d", mTieCounter));
+        androidCountTextView.setText(String.format(Locale.getDefault(), "%d", mAndroidCounter));
 
         //call constructor to create reference to TicTacToeGame.java class
         ticTacToeGame = new com.chaudhry.najeeb.tictactoe.TicTacToeGame();
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         {
             whoseTurnTextView.setText(R.string.turn_computer);
             int move = ticTacToeGame.getComputerMove();
-            setMove(ticTacToeGame.ANDROID_PLAYER, move);
+            setMove(TicTacToeGame.ANDROID_PLAYER, move);
             mHumanFirst = true;
         }
         mGameOver = false;
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 if (mBoardButtons[location].isEnabled())
                 {
-                    setMove(ticTacToeGame.HUMAN_PLAYER, location);
+                    setMove(TicTacToeGame.HUMAN_PLAYER, location);
 
                     int[] winner = ticTacToeGame.checkForWinner();
 
@@ -121,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         whoseTurnTextView.setText(R.string.turn_computer);
                         int move = ticTacToeGame.getComputerMove();
-                        setMove(ticTacToeGame.ANDROID_PLAYER, move);
+                        setMove(TicTacToeGame.ANDROID_PLAYER, move);
                         winner = ticTacToeGame.checkForWinner();
                     }
 
@@ -133,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         whoseTurnTextView.setText(R.string.result_tie);
                         mTieCounter++;
-                        tiesCountTextView.setText(Integer.toString(mTieCounter));
+                        tiesCountTextView.setText(String.format(Locale.getDefault(), "%d", mTieCounter));
                         mGameOver = true;
                     }
                     //winner[0]=2 means human is winner
@@ -141,7 +143,8 @@ public class MainActivity extends AppCompatActivity {
                     {
                         whoseTurnTextView.setText(R.string.result_human_wins);
                         mHumanCounter++;
-                        youCountTextView.setText(Integer.toString(mHumanCounter));
+                        youCountTextView.setText(String.format(Locale.getDefault(), "%d", mHumanCounter));
+
                         mGameOver = true;
 
                         //Change the background color of the winning buttons
@@ -154,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         whoseTurnTextView.setText(R.string.result_android_wins);
                         mAndroidCounter++;
-                        androidCountTextView.setText(Integer.toString(mAndroidCounter));
+                        androidCountTextView.setText(String.format(Locale.getDefault(), "%d", mAndroidCounter));
                         mGameOver = true;
 
                         //Change the background color of the winning buttons
@@ -173,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         ticTacToeGame.setMove(player, location);
         mBoardButtons[location].setEnabled(false);
         mBoardButtons[location].setText(String.valueOf(player));
-        if (player == ticTacToeGame.HUMAN_PLAYER)
+        if (player == TicTacToeGame.HUMAN_PLAYER)
             mBoardButtons[location].setTextColor(Color.GREEN);
         else
             mBoardButtons[location].setTextColor(Color.RED);
@@ -193,15 +196,12 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case R.id.newGame:
-                startNewGame();
-                break;
-            case R.id.exitGame:
-                MainActivity.this.finish();
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.newGame) {
+            startNewGame();
+        } else if (item.getItemId() == R.id.exitGame) {
+            MainActivity.this.finish();
+        } else {
+            return super.onOptionsItemSelected(item);
         }
         return true;
     }

@@ -5,3 +5,22 @@
 .DS_Store
 /build
 /captures
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+app.iml
+.idea/compiler.xml
+.idea/deploymentTargetSelector.xml
+.idea/deviceStreaming.xml
+.idea/gradle.xml
+.idea/migrations.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/Project.xml
+.idea/codeStyle/
+.idea/modules/app/
+.idea/caches/
+
+# Ignore build directories
+app/build/

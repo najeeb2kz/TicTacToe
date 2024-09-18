@@ -1,15 +1,14 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     android:background="#00E5FF"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/margin_50"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.chaudhry.najeeb.tictactoe.MainActivity">
 
     <TableLayout
         android:id="@+id/playAreaTableLayout"
@@ -19,119 +18,158 @@
 
         <TableRow
             android:id="@+id/tableRow1"
+            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
 
             <Button
                 android:id="@+id/oneButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_marginRight="3dp"
                 android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="#757575"
                 android:text="@string/one"
-                android:textSize="50dp"
-                android:background="#757575" />
+                android:textSize="50sp"
+                tools:text="@string/one"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
 
             <Button
                 android:id="@+id/twoButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_marginRight="3dp"
                 android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="#757575"
                 android:text="@string/two"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/two"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
 
             <Button
                 android:id="@+id/threeButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_marginRight="3dp"
                 android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="#757575"
                 android:text="@string/three"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/three"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow2"
+            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
 
             <Button
                 android:id="@+id/fourButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
+                android:background="#757575"
                 android:text="@string/four"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/four"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
 
             <Button
                 android:id="@+id/fiveButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
+                android:background="#757575"
                 android:text="@string/five"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/five"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
 
             <Button
                 android:id="@+id/sixButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
+                android:background="#757575"
                 android:text="@string/six"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/six"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow3"
+            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
 
             <Button
                 android:id="@+id/sevenButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
+                android:background="#757575"
                 android:text="@string/seven"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/seven"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
 
             <Button
                 android:id="@+id/eightButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
+                android:background="#757575"
                 android:text="@string/eight"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/eight"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
 
             <Button
                 android:id="@+id/nineButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
+                android:background="#757575"
                 android:text="@string/nine"
-                android:textSize="50dp"
-                android:background="#757575"/>
+                android:textSize="50sp"
+                tools:text="@string/nine"
+                tools:textColor="#000000"
+                tools:background="#757575"/>
         </TableRow>
     </TableLayout>
 
@@ -142,61 +180,62 @@
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:text="@string/info"
-        android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TableLayout
         android:id="@+id/youTiesAndroidTableLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TableRow
             android:id="@+id/tableRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:gravity="center_horizontal" >
+            android:gravity="center_horizontal"
+            tools:ignore="UselessParent">
 
             <TextView
                 android:id="@+id/youTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/human"
-                android:textSize="20dp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/youCountTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:textSize="20dp"/>
+                android:layout_marginEnd="10dp"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tiesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ties"
-                android:textSize="20dp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tiesCountTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:textSize="20dp"/>
+                android:layout_marginEnd="10dp"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/androidTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/android"
-                android:textSize="20dp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/androidCountTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"/>
+                android:textSize="20sp" />
 
         </TableRow>
     </TableLayout>

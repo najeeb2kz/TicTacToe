@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class TicTacToeGame {
 
-    private char mBoard[];
+    private final char[] mBoard;
     private final static int BOARD_SIZE = 9;
     public static final char HUMAN_PLAYER = 'X';
     public static final char ANDROID_PLAYER = 'O';
     public static final char EMPTY_SPACE = ' ';
-    private java.util.Random mRand;
+    private final java.util.Random mRand;
 
 
     public static int getBoardSize() {
