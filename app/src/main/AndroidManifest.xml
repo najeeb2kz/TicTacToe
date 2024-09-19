@@ -24,8 +24,7 @@
 
         <!-- Main activity  -->
         <activity
-            android:name="com.chaudhry.najeeb.tictactoe.MainActivity"
-            >
+            android:name="com.chaudhry.najeeb.tictactoe.MainActivity">
         </activity>
     </application>
 
